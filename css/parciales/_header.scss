@@ -1,0 +1,211 @@
+/* Header */
+header {
+    padding: 10px 0;
+    background-color: #141414;
+  
+    .container-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+  
+    /* Logo */
+    .logo {
+      img {
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
+      }
+    }
+  
+    /* Navigation */
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(4, auto) auto;
+      gap: 20px;
+      align-items: center;
+  
+      &.active {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 20px 0;
+      }
+  
+      .nav-link {
+        font-size: 1rem;
+        color: var(--text-on-primary);
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: var(--primary-color-light);
+        }
+      }
+  
+      .dropdown {
+        position: relative;
+  
+        .dropdown-toggle {
+          &::after {
+            content: '▼';
+            font-size: 0.8rem;
+            margin-left: 5px;
+          }
+        }
+  
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #2e2e2e;
+          border-radius: 4px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+        }
+  
+        &:hover .dropdown-menu {
+          display: block;
+        }
+  
+        .dropdown-item {
+          padding: 10px 15px;
+          color: var(--text-on-primary);
+          display: block;
+          font-size: 0.9rem;
+          transition: background 0.3s;
+  
+          &:hover {
+            background-color: var(--primary-color-dark);
+          }
+        }
+      }
+    }
+  
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+  
+      span {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-on-primary);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  /* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #2e2e2e;
+    gap: 10px;
+  
+    .search-input {
+      width: 100%;
+      max-width: 600px;
+      padding: 10px 15px;
+      border-radius: 15px;
+      border: 1px solid #444;
+      font-size: 1rem;
+      color: var(--text-on-primary);
+      background-color: #747474;
+      outline: none;
+      transition: border-color 0.3s;
+  
+      &::placeholder {
+        color: #000000;
+      }
+  
+      &:focus {
+        border-color: var(--primary-color-light);
+      }
+    }
+  
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      background-color: var(--primary-color);
+      color: var(--btn-color);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+  
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  /* Media Query */
+@media (max-width: 768px) {
+    header {
+      .hamburger {
+        display: flex;
+      }
+  
+      .nav {
+        display: none; 
+      }
+    }
+  
+    .nav.active {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      top: 70px; 
+      left: 0;
+      width: 100%;
+      background-color: #1e1e1e;
+      padding: 20px 0;
+      z-index: 9999; 
+    }
+  
+    .search-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .search-input {
+      flex: 1;
+      width: auto;
+    }
+  
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+  }
+  
