@@ -54,6 +54,82 @@
     </button>
   </div>
   <!-- SEARCH BAR END -->
+  <div class="carousel" id="movieCarousel">
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item active">
+        <img src="../imagenes/darknombre.jpg" alt="Dark">
+        <div class="carousel-caption">
+          <h5>Dark</h5>
+          <button class="btn-watch-now">VER AHORA</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../imagenes/internado.jpg" alt="internado" class="mover_img_abajo">
+        <div class="carousel-caption">
+          <h5>El internado</h5>
+          <button class="btn-watch-now">VER AHORA</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../imagenes/bridgerton banner.jpg" alt="Bridgerton">
+        <div class="carousel-caption">
+          <h5>Los Bridgerton</h5>
+          <button class="btn-watch-now">VER AHORA</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control carousel-control-prev" id="prevButton">&#10094;</button>
+    <button class="carousel-control carousel-control-next" id="nextButton">&#10095;</button>
+    <div class="carousel-indicators">
+      <button data-slide-to="0" class="active"></button>
+      <button data-slide-to="1"></button>
+      <button data-slide-to="2"></button>
+    </div>
+  </div>
+  <!-- Carrusel 1 -->
+  <h2 class="titulos">
+    TOP 10 SERIES HOY</h2>
+  <div class="movie-carousel">
+    <div class="movie-carousel-inner" id="movie-top10-container">
+    </div>
+    <button class="movie-carousel-control-prev">&#10094;</button>
+    <button class="movie-carousel-control-next">&#10095;</button>
+  </div>
+   <!-- Carrusel 2 -->
+   <h2 class="titulos">Series populares de PAI+</h2>
+   <div><a href=""><p class="enlace">Ver más >></p></a></div>
+   <div class="movie-carousel">
+     <div class="movie-carousel-inner" id="serie-trending-container">
+     </div>
+     <button class="movie-carousel-control-prev">&#10094;</button>
+     <button class="movie-carousel-control-next">&#10095;</button>
+   </div>
+ 
+   <!-- Carrusel 3 -->
+   <h2 class="titulos">Mi lista </h2>
+   <div><a href=""><p class="enlace">Ver más >></p></a></div>
+   <div class="movie-carousel">
+     <div class="movie-carousel-inner" id="carousel-inner-series">
+     </div>
+     <button class="movie-carousel-control-prev">&#10094;</button>
+     <button class="movie-carousel-control-next">&#10095;</button>
+   </div>
+ 
+   <!-- Carrusel 4 -->
+   <h2 class="titulos">Recomendaciones para tí</h2>
+   <div class="movie-carousel">
+     <div class="movie-carousel-inner" id="movie-trending-container">
+     </div>
+     <button class="movie-carousel-control-prev">&#10094;</button>
+     <button class="movie-carousel-control-next">&#10095;</button>
+   </div>
+   
 
+  <!-- para que avance el carrousel -->
+   
+  <script src="../js/CarruselHeader.js"></script>
+  <script src="../js/CarruselDePelis.js"></script>
+  <script src="../js/Listaseries.js"></script>
+  <script src="../js/trendingseries.js"></script>
 </body>
 </html>
