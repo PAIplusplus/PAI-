@@ -15,7 +15,6 @@ async function obtenerDatos(url, token) {
     }
 }
 
-
 async function mostrarEpisodios() {
     const apiToken = "803e84241c59e849f680f604f569778b";  
     const apiUrl = `https://api.themoviedb.org/3/tv/on_the_air?api_key=${apiToken}&language=es-ES&page=1`;  
@@ -28,14 +27,29 @@ async function mostrarEpisodios() {
         data.results.forEach(serie => {
             const carouselItem = document.createElement("div");
             carouselItem.classList.add("movie-carousel-item");
-
+        
             const posterUrl = `https://image.tmdb.org/t/p/w500${serie.poster_path}`;
+            const overviewText = serie.overview ? serie.overview : "Sinopsis no disponible";
+        
             carouselItem.innerHTML = `
                 <img src="${posterUrl}" alt="${serie.name}" />
-                <div class="movie-title">${serie.name}</div>
+                <div class="movie-overlay">
+                    <div class="movie-title">${serie.name}</div>
+                    <p class="movie-overview">${overviewText}</p>
+                    <br>
+                    <div class="button-container">
+                        <button class="btn fav-btn">❤️</button>
+                        <button class="btn add-btn">+</button>
+                        <button class="btn play-btn">▶</button>
+                        <button class="btn detalles-btn">Detalles</button>
+                    </div>
+                </div>
             `;
-            container.appendChild(carouselItem);  
+            container.appendChild(carouselItem);
         });
+        
+        
+        
     } else {
         console.log("No se pudieron cargar las series.");
     }

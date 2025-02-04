@@ -33,7 +33,7 @@ async function mostrarSeriesPopulares() {
             const posterUrl = serie.poster_path ? `https://image.tmdb.org/t/p/w500${serie.poster_path}` : '../images/serie.jpeg'; 
             
             carouselItem.innerHTML = `
-                <img src="${posterUrl}" alt="${serie.name}" />
+                <img src="${posterUrl}" alt="${serie.name}" style="border-radius: 20px;" />
                 <div class="movie-title">${serie.name}</div>
             `;
             container.appendChild(carouselItem);  
