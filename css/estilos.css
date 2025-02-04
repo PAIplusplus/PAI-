@@ -269,7 +269,6 @@ body {
   position: absolute;
   bottom: 10%;
   left: 5%;
-  transform: none;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   color: white;
@@ -330,77 +329,144 @@ body {
   background-color: var(--primary-color);
 }
 
-.titulos {
-  margin-top: 20px;
-  padding: 5px;
-}
-
+/* Movie Carousel */
 .movie-carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 50px 0;
   background-color: #141414;
 }
 .movie-carousel .movie-carousel-inner {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   transition: transform 0.5s ease-in-out;
-  margin-bottom: 50px;
 }
 .movie-carousel .movie-carousel-item {
   flex: 0 0 auto;
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 300px;
   position: relative;
-  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
 }
 .movie-carousel .movie-carousel-item img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
-.movie-carousel .movie-carousel-item .movie-title {
+.movie-carousel .movie-carousel-item .movie-overlay {
   position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 14px;
-  margin-top: 10px;
-  text-align: center;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-weight: bold;
-}
-.movie-carousel .movie-carousel-control-prev {
-  position: absolute;
-  top: 40%;
-  left: 10px;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
   color: white;
-  border: none;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .movie-title {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .movie-overview {
+  font-size: 12px;
+  color: #bbb;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3em;
+  line-height: 1.5em;
+  padding: 5px 10px;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .detalles-btn {
+  grid-column: 1/-1;
+  background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark));
+  border-radius: 20px;
+  padding: 8px 15px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .fav-btn,
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .add-btn,
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .play-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .fav-btn:hover,
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .add-btn:hover,
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .play-btn:hover {
+  transform: scale(1.2);
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .fav-btn {
+  background: #ff4d4d;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .add-btn {
+  background: #00fa94;
+}
+.movie-carousel .movie-carousel-item .movie-overlay .button-container .play-btn {
+  background: #ffcc00;
+}
+.movie-carousel .movie-carousel-item:hover {
+  transform: scale(1.3);
   z-index: 10;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
 }
-.movie-carousel .movie-carousel-control-prev:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
+.movie-carousel .movie-carousel-item:hover img {
+  transform: scale(1.1);
 }
+.movie-carousel .movie-carousel-item:hover .movie-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+.movie-carousel .movie-carousel-item:hover .movie-overlay .movie-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+.movie-carousel .movie-carousel-control-prev,
 .movie-carousel .movie-carousel-control-next {
   position: absolute;
   top: 40%;
-  right: 10px;
-  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -413,9 +479,16 @@ body {
   justify-content: center;
   z-index: 10;
 }
+.movie-carousel .movie-carousel-control-prev:hover,
 .movie-carousel .movie-carousel-control-next:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
+}
+.movie-carousel .movie-carousel-control-prev {
+  left: 10px;
+}
+.movie-carousel .movie-carousel-control-next {
+  right: 10px;
 }
 
 /* Footer */

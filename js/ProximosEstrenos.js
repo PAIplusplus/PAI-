@@ -26,12 +26,12 @@ async function mostrarPeliculasProximas() {
 
         data.results.forEach(pelicula => {
             const movieElement = document.createElement("div");
-            movieElement.classList.add("movie-item");
+            movieElement.classList.add("movie-carousel-item");
 
             const posterUrl = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
 
             movieElement.innerHTML = `
-                <img src="${posterUrl}" alt="${pelicula.title}" style="width: 200px; height: 300px;" />
+                <img src="${posterUrl}" alt="${pelicula.title}" style="width: 200px; height: 300px; border-radius: 20px;" />
             `;
             container.appendChild(movieElement);  
         });
