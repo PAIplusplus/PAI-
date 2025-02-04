@@ -409,7 +409,6 @@ body {
 }
 .movie-carousel .movie-carousel-item .movie-overlay .button-container .detalles-btn {
   grid-column: 1/-1;
-  background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark));
   border-radius: 20px;
   padding: 8px 15px;
   width: 100%;
