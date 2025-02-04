@@ -519,4 +519,43 @@ footer .footer-nav .footer-link {
 }
 footer .footer-nav .footer-link:hover {
   color: var(--primary-color-light);
+}
+
+/* imagen top 10 */
+.movie-number img {
+  width: 100%;
+  height: 300px;
+}
+
+.movie-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+}
+
+.movie-poster {
+  position: relative;
+  border-radius: 50%;
+}
+
+.movie-item img {
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 20%;
+}
+
+.movie-number {
+  position: absolute;
+  top: 0px;
+  z-index: 1; /* Para asegurarte de que el número esté encima de la película */
+}
+
+.movie-number img {
+  width: 60px; /* Ajusta el tamaño según sea necesario */
+  height: 250px;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
 }/*# sourceMappingURL=estilos.css.map */
