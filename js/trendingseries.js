@@ -1,5 +1,5 @@
   
-async function obtenerTop10Serie(token){
+async function obtenerTrendingSerie(token){
     try {
       const options =await fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US',{
         method: 'GET',
@@ -14,9 +14,9 @@ async function obtenerTop10Serie(token){
     }
   }
 
-  async function mostrarTop10Serie() {
+  async function mostrarTrendingSerie() {
     const apiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDNlODQyNDFjNTllODQ5ZjY4MGY2MDRmNTY5Nzc4YiIsIm5iZiI6MTczNzU2MjMyNi45NjgsInN1YiI6IjY3OTExOGQ2ZmI2MDlkOTI2ODI4YzBkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sGlTMmT37X3Vbw8jcEAJesSa38W4JjEt6yXicjFJDbA";  
-    const data = await obtenerTop10Serie(apiToken);  
+    const data = await obtenerTrendingSerie(apiToken);  
   
     if (data && data.results) {
         const container = document.getElementById("serie-trending-container");  
@@ -34,8 +34,8 @@ async function obtenerTop10Serie(token){
             container.appendChild(movieElement);  
         });
     } else {
-        console.log("No se pudieron cargar las series top.");
+        console.log("No se pudieron cargar las series trending.");
     }
   }
   
-  document.addEventListener("DOMContentLoaded", mostrarTop10Serie);
+  document.addEventListener("DOMContentLoaded", mostrarTrendingSerie);

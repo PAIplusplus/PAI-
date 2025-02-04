@@ -153,10 +153,20 @@ header .hamburger span {
   position: relative;
   display: inline-block;
   margin-right: 10px;
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
 }
 
 .movie-poster {
   position: relative;
+  border-radius: 50%;
+}
+
+.movie-item img{
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius:20%;
 }
 
 .movie-number {
@@ -168,6 +178,8 @@ header .hamburger span {
 .movie-number img {
   width: 60px; /* Ajusta el tamaño según sea necesario */
   height: 250px;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
 }
 
 /* Media Query */
@@ -371,9 +383,11 @@ body {
 }
 .movie-carousel .movie-carousel-inner {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  padding: 15px;
   transition: transform 0.5s ease-in-out;
   margin-bottom: 50px;
+
 }
 .movie-carousel .movie-carousel-item {
   flex: 0 0 auto;
