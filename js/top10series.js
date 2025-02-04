@@ -29,8 +29,13 @@ async function mostrarTop10Serie() {
           const posterUrl = `https://image.tmdb.org/t/p/w500${serie.poster_path}`;
 
           movieElement.innerHTML = `
-              <img src="${posterUrl}" alt="${serie.title}" style="width: 200px; height: 300px;" />
-          `;
+          <div class="serie-poster">
+            <img src="${posterUrl}" alt="${serie.name}" style="width: 200px; height: 300px;" />
+          </div>
+          <div class="serie-name">
+            <h3>${serie.name}</h3>  <!-- Mostrar el nombre de la serie -->
+          </div>
+        `;
           container.appendChild(movieElement);  
       });
   } else {

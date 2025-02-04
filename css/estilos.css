@@ -558,4 +558,8 @@ footer .footer-nav .footer-link:hover {
   height: 250px;
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
+}
+
+.enlaces {
+  color: var(--primary-color);
 }/*# sourceMappingURL=estilos.css.map */
