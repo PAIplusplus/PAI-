@@ -1,0 +1,70 @@
+
+:root {
+    --primary-color: #bb00fa;
+    --primary-color-light: #d94dfc;
+    --primary-color-dark: #9600c7;
+    --text-on-primary: #ffffff;
+    --secondary-color: #00fa94;
+    --btn-color: #ffffff;
+    --btn-bg: var(--primary-color-dark);
+    --btn-bg-hover: var(--primary-color-dark);
+  }
+
+.visionado-container{
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border: none;
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white; 
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20px;  
+    left: 20px;  
+    font-size: 30px;  
+    color: white;  
+    text-decoration: none;  
+    transition: color 0.3s ease; 
+}
+
+.back-arrow:hover {
+    color: var(--primary-color-light); 
+}
+
