@@ -521,6 +521,17 @@ footer .footer-nav .footer-link:hover {
   color: var(--primary-color-light);
 }
 
+:root {
+  --primary-color: #bb00fa;
+  --primary-color-light: #d94dfc;
+  --primary-color-dark: #9600c7;
+  --text-on-primary: #ffffff;
+  --secondary-color: #00fa94;
+  --btn-color: #ffffff;
+  --btn-bg: var(--primary-color-dark);
+  --btn-bg-hover: var(--primary-color-dark);
+}
+
 /* imagen top 10 */
 .movie-number img {
   width: 100%;
@@ -560,6 +571,17 @@ footer .footer-nav .footer-link:hover {
   border-bottom-right-radius: 0%;
 }
 
-.enlaces {
-  color: var(--primary-color);
+.enlace {
+  color: var(--primary-color-light) !important;
+}
+
+.pai-carousel .movie-carousel-item {
+  position: relative;
+  width: 300px; /* Tamaño inicial del poster */
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.pai-carousel .movie-carousel-item:hover {
+  transform: scale(1.05); /* Efecto de escala para hacer más grande */
+  width: 600px; /* Aumentamos el tamaño cuando se pasa el ratón */
 }/*# sourceMappingURL=estilos.css.map */

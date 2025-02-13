@@ -46,6 +46,7 @@ async function mostrarPeliculasPopulares() {
                         <a href="../htmls/detalle_peli.html" class="detalles-btn">
                             <button class="btn">Detalles</button>
                         </a>
+                    </div>
                 </div>
             `;
             container.appendChild(movieElement);  

@@ -11,9 +11,8 @@
     href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:wght@100..900&family=Nunito:wght@200..1000&family=Open+Sans:wght@300..800&display=swap"
     rel="stylesheet">
   <!-- Estilos -->
-  <link rel="stylesheet" href="../css/estilos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+  <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
   <!-- HEADER -->
@@ -46,7 +45,8 @@
     </div>
   </header>
   <!-- HEADER END -->
-     <!-- SEARCH BAR -->
+
+  <!-- SEARCH BAR -->
   <div class="search-bar">
     <input type="text" placeholder="Buscar películas, series, actores..." class="search-input">
     <button class="search-button">
@@ -54,6 +54,8 @@
     </button>
   </div>
   <!-- SEARCH BAR END -->
+
+  <!-- Carrusel de Películas -->
   <div class="carousel" id="movieCarousel">
     <div class="carousel-inner" id="carouselInner">
       <div class="carousel-item active">
@@ -61,6 +63,10 @@
         <div class="carousel-caption">
           <h5>El Joker</h5>
           <button class="btn-watch-now">VER AHORA</button>
+          <!-- btn info -->
+          <button class="btn-watch-now">
+            <i class="bi bi-info-circle"></i>
+          </button>
         </div>
       </div>
       <div class="carousel-item">
@@ -68,6 +74,9 @@
         <div class="carousel-caption">
           <h5>A Star is Born</h5>
           <button class="btn-watch-now">VER AHORA</button>
+          <button class="btn-watch-now">
+            <i class="bi bi-info-circle"></i>
+          </button>
         </div>
       </div>
       <div class="carousel-item">
@@ -75,6 +84,9 @@
         <div class="carousel-caption">
           <h5>A 3 Metros sobre el cielo</h5>
           <button class="btn-watch-now">VER AHORA</button>
+          <button class="btn-watch-now">
+            <i class="bi bi-info-circle"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -86,46 +98,45 @@
       <button data-slide-to="2"></button>
     </div>
   </div>
-  <!-- Carrusel 1 -->
-  <h2 class="titulos">
-    TOP 10 PELÍCULAS HOY</h2>
+  <!-- Carrusel TOP 10 PELÍCULAS HOY -->
+
+  <h2 class="titulos">TOP 10 PELÍCULAS HOY</h2>
   <div class="movie-carousel">
-    <div class="movie-carousel-inner" id="movie-top10-container">
-    </div>
+    <div class="movie-carousel-inner" id="movie-top10-container"></div>
     <button class="movie-carousel-control-prev">&#10094;</button>
     <button class="movie-carousel-control-next">&#10095;</button>
   </div>
-   <!-- Carrusel 2 -->
-   <h2 class="titulos">Películas populares de PAI+</h2>
-   <div><a href=""><p class="enlace">Ver más >></p></a></div>
-   <div class="movie-carousel">
-     <div class="movie-carousel-inner" id="movie-popular-container">
-     </div>
-     <button class="movie-carousel-control-prev">&#10094;</button>
-     <button class="movie-carousel-control-next">&#10095;</button>
-   </div>
- 
-   <!-- Carrusel 3 -->
-   <h2 class="titulos">Mi lista </h2>
-   <div><a href=""><p class="enlace">Explorar todo >></p></a></div>
-   <div class="movie-carousel">
-     <div class="movie-carousel-inner" id="movie-lista-container">
-     </div>
-     <button class="movie-carousel-control-prev">&#10094;</button>
-     <button class="movie-carousel-control-next">&#10095;</button>
-   </div>
- 
-   <!-- Carrusel 4 -->
-   <h2 class="titulos">Recomendaciones para tí</h2>
-   <div class="movie-carousel">
-     <div class="movie-carousel-inner" id="movie-trending-container">
-     </div>
-     <button class="movie-carousel-control-prev">&#10094;</button>
-     <button class="movie-carousel-control-next">&#10095;</button>
-   </div>
-   
-   <!-- FOOTER -->
-   <footer>
+
+  <!-- Carrusel Películas populares de PAI+ -->
+  <!-- Carrusel Películas populares de PAI+ -->
+<h2 class="titulos">Películas populares de PAI+</h2>
+<div><a href=""><p class="enlace">Ver más >></p></a></div>
+<div class="movie-carousel pai-carousel"> <!-- Clase 'pai-carousel' agregada -->
+  <div class="movie-carousel-inner" id="movie-popular-container"></div>
+  <button class="movie-carousel-control-prev">&#10094;</button>
+  <button class="movie-carousel-control-next">&#10095;</button>
+</div>
+
+
+  <!-- Carrusel lista-->
+  <h2 class="titulos">Mi lista</h2>
+  <div><a href=""><p class="enlace">Explorar todo >></p></a></div>
+  <div class="movie-carousel">
+    <div class="movie-carousel-inner" id="movie-lista-container"></div>
+    <button class="movie-carousel-control-prev">&#10094;</button>
+    <button class="movie-carousel-control-next">&#10095;</button>
+  </div>
+
+  <!-- Carrusel Recomendaciones -->
+  <h2 class="titulos">Recomendaciones para tí</h2>
+  <div class="movie-carousel">
+    <div class="movie-carousel-inner" id="movie-trending-container"></div>
+    <button class="movie-carousel-control-prev">&#10094;</button>
+    <button class="movie-carousel-control-next">&#10095;</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
     <div class="container-footer">
       <p>&copy; 2025 TuSitioWeb. Todos los derechos reservados.</p>
       <nav class="footer-nav">
@@ -136,7 +147,8 @@
     </div>
   </footer>
   <!-- FOOTER END -->
-   <!-- para que avance el carrousel -->
+
+  <!-- Scripts -->
   <script src="../js/CarruselHeader.js"></script>
   <script src="../js/CarruselDePelis.js"></script>
   <script src="../js/top10pelis.js"></script>
