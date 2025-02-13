@@ -573,6 +573,8 @@ footer .footer-nav .footer-link:hover {
 
 .enlace {
   color: var(--primary-color-light) !important;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 .pai-carousel .movie-carousel-item {
@@ -680,4 +682,14 @@ footer .footer-nav .footer-link:hover {
 .button-container .play-btn {
   background: #ffcc00;
   border: none;
+}
+
+.tituloPrincipal {
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.titulos {
+  font-size: 40px;
+  margin-left: 20px;
 }/*# sourceMappingURL=estilos.css.map */
