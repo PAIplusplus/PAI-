@@ -29,10 +29,26 @@ async function mostrarLista() {
           movieElement.classList.add("movie-item");
 
           const posterUrl = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
-
+          const overviewText = pelicula.overview ? pelicula.overview : "Sinopsis no disponible";
+          
           movieElement.innerHTML = `
               <img src="${posterUrl}" alt="${pelicula.title}" style="width: 200px; height: 300px;" />
+                <div class="movie-overlay">
+                    <div class="movie-title">${pelicula.title}</div>
+                    <p class="movie-overview">${overviewText}</p>
+                    <br>
+                    <div class="button-container">
+                        <button class="btn fav-btn">❤️</button>
+                        <button class="btn add-btn">+</button>
+                         <a href="../htmls/visionado.html">
+                            <button class="btn play-btn">▶</button>
+                        </a>
+                        <a href="../htmls/detalle_peli.html" class="detalles-btn">
+                            <button class="btn">Detalles</button>
+                        </a>
+                    </div>
           `;
+          
           container.appendChild(movieElement);  
       });
   } else {
