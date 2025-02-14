@@ -229,9 +229,6 @@ body {
   background-color: var(--btn-bg);
   transition: background-color 0.3s;
 }
-.btn:hover {
-  background-color: var(--btn-bg-hover);
-}
 .btn-outline {
   background-color: transparent;
   border: 2px solid var(--primary-color);
@@ -718,15 +715,28 @@ body {
 }
 
 .tituloPrincipal {
-  font-size: 60px;
+  font-size: 50px;
   margin-left: 20px;
   background-color: var(--btn-negro);
+  text-align: center;
+}
+
+span {
+  display: none;
+}
+
+.aparecer {
+  display: none;
 }
 
 .titulos {
   font-size: 40px;
   margin-left: 20px;
   background-color: var(--btn-negro);
+}
+
+.play-btn {
+  background-color: var(--primary-color-light);
 }
 
 .movie-item {
@@ -798,4 +808,21 @@ body {
   color: rgba(0, 0, 0, 0.384);
   -webkit-text-stroke: 3px rgb(255, 255, 255);
   z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .tituloPrincipal {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  span {
+    display: inline-block;
+  }
+  .ocultar {
+    display: none;
+  }
+  .aparecer {
+    display: inline-block;
+  }
 }/*# sourceMappingURL=estilos.css.map */

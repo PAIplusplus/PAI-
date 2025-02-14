@@ -205,9 +205,18 @@ body{
 }
 
 .tituloPrincipal {
-  font-size: 60px;
+  font-size: 50px;
   margin-left: 20px;
   background-color: var(--btn-negro);
+  text-align: center;
+}
+
+span{
+  display: none;
+}
+
+.aparecer{
+  display: none;
 }
 
 .titulos {
@@ -215,6 +224,11 @@ body{
   margin-left: 20px;
   background-color: var(--btn-negro);
 }
+
+.play-btn{
+  background-color: var(--primary-color-light);
+}
+
 
 
 .movie-item {
@@ -287,3 +301,38 @@ body{
   z-index: 3;
 }
 
+
+// RESPONSIVE
+
+@media (min-width: 576px) { 
+
+ }
+
+
+@media (min-width: 768px) {
+  .tituloPrincipal{
+    text-align: left;
+  }
+ }
+
+
+@media (min-width: 992px) { 
+  span{
+    display: inline-block;
+  }
+
+  .ocultar{
+    display: none;
+  }
+
+  .aparecer{
+    display: inline-block;
+  }
+ }
+
+
+@media (min-width: 1200px) {
+ 
+  }
+
+@media (min-width: 1400px) {  }

@@ -47,7 +47,9 @@ async function mostrarTop10() {
                     <br>
                     <div class="button-container">
                         <button class="btn fav-btn">❤️</button>
-                        <button class="btn add-btn">+</button>
+                        <a href="../htmls/detalle_peli.html">
+                           <button class="btn add-btn">+</button>
+                        </a>
                          <a href="../htmls/visionado.html">
                             <button class="btn play-btn">▶</button>
                         </a>
