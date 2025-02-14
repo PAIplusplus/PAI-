@@ -10,18 +10,6 @@
   --btn-negro:#141414;
 }
 
-/* HEADER FIJO */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(20, 20, 20, 0.9); /* Fondo semi-transparente */
-  padding: 10px 20px;
-  z-index: 1000;
-}
-
-/* Permite que las imágenes de los top 10 sean visibles */
 #movie-top10-container, #serie-top10-container, #serie-trending-container {
   overflow: visible !important;
 }
@@ -106,6 +94,7 @@ body {
   scroll-behavior: smooth;
 }
 
+// se hace mas gruesa
 .serie-item {
   flex: 0 0 auto;
   position: relative;
