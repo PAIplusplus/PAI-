@@ -1,49 +1,64 @@
-async function obtenerTop10(token) {
+async function obtenerTop10() {
+  const apiToken = "803e84241c59e849f680f604f569778b"; 
+  const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiToken}&language=es-ES&page=1`;  
+
   try {
-    const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Accept': 'application/json'
+      const response = await fetch(apiUrl);  
+      if (!response.ok) {
+          throw new Error(`Error HTTP: ${response.status}`);
       }
-    });
-    const data = await response.json();
-    return data;
+      const data = await response.json();
+      return data;
   } catch (error) {
-    console.error("Error al obtener las películas top10:", error);
-    return null;
+      console.error("Error al obtener los datos:", error);
+      return null;
   }
 }
 
+// Función para mostrar el Top 10 de películas
 async function mostrarTop10() {
-  const apiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDNlODQyNDFjNTllODQ5ZjY4MGY2MDRmNTY5Nzc4YiIsIm5iZiI6MTczNzU2MjMyNi45NjgsInN1YiI6IjY3OTExOGQ2ZmI2MDlkOTI2ODI4YzBkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sGlTMmT37X3Vbw8jcEAJesSa38W4JjEt6yXicjFJDbA";
-  const data = await obtenerTop10(apiToken);
+  const data = await obtenerTop10();  
 
   if (data && data.results) {
-    const container = document.getElementById("movie-top10-container");
-    container.innerHTML = '';
+      const container = document.getElementById("movie-top10-container");
+      if (!container) {
+          console.error("No se encontró el contenedor #movie-top10-container en el HTML.");
+          return;
+      }
+      container.innerHTML = '';
 
-    const top10Peliculas = data.results.slice(0, 10); // Obtener solo las primeras 10
+      data.results.slice(5, 15).forEach((pelicula, index) => {
+          const movieElement = document.createElement("div");
+          movieElement.classList.add("movie-item");
 
-    top10Peliculas.forEach((pelicula, index) => {
-      const movieElement = document.createElement("div");
-      movieElement.classList.add("movie-item");
+          const posterUrl = pelicula.poster_path 
+              ? `https://image.tmdb.org/t/p/w500${pelicula.poster_path}` 
+              : 'https://via.placeholder.com/500x750?text=Imagen+No+Disponible';
 
-      const posterUrl = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
-      const numberImage = `/imagenes/numeros/${index + 1}.webp`;  // La imagen del número
+          const overviewText = pelicula.overview ? pelicula.overview : "Descripción no disponible.";
 
-      movieElement.innerHTML = `
-        <div class="movie-poster">
-          <img src="${posterUrl}" alt="${pelicula.title}" style="width: 300px; height: 250px;" />
-        </div>
-        <div class="movie-number">
-          <img src="${numberImage}" />
-        </div>
-      `;
-      container.appendChild(movieElement);
-    });
+          movieElement.innerHTML = `
+              <div class="movie-number">${index + 1}</div>
+              <div class="movie-poster">
+                  <img src="${posterUrl}" alt="${pelicula.title}" />
+                  <div class="movie-overlay">
+                    <div class="movie-title">${pelicula.title}</div>
+                    <p class="movie-overview">${overviewText}</p>
+                    <br>
+                    <div class="button-container">
+                        <button class="btn fav-btn">❤️</button>
+                        <button class="btn add-btn">+</button>
+                         <a href="../htmls/visionado.html">
+                            <button class="btn play-btn">▶</button>
+                        </a>
+                    </div>
+                  </div>
+              </div>
+          `;
+          container.appendChild(movieElement);
+      });
   } else {
-    console.log("No se pudieron cargar las películas top.");
+      console.log("No se pudieron cargar las películas top.");
   }
 }
 

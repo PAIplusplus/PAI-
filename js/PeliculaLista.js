@@ -24,7 +24,7 @@ async function mostrarLista() {
       const container = document.getElementById("movie-lista-container");  
       container.innerHTML = ''; 
 
-      data.results.forEach(pelicula => {
+      data.results.slice(10, data.length).forEach(pelicula => {
           const movieElement = document.createElement("div");
           movieElement.classList.add("movie-item");
 
@@ -32,7 +32,7 @@ async function mostrarLista() {
           const overviewText = pelicula.overview ? pelicula.overview : "Sinopsis no disponible";
           
           movieElement.innerHTML = `
-              <img src="${posterUrl}" alt="${pelicula.title}" style="width: 200px; height: 300px;" />
+              <img src="${posterUrl}" alt="${pelicula.title}" style="height: 300px;" />
                 <div class="movie-overlay">
                     <div class="movie-title">${pelicula.title}</div>
                     <p class="movie-overview">${overviewText}</p>

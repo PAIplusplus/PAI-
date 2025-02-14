@@ -1,5 +1,5 @@
 const setupCarousel = (container) => {
-    const inner = container.querySelector('.movie-carousel-inner');
+  const inner = container.querySelector('.movie-carousel-inner'); 
     const prevButton = container.querySelector('.movie-carousel-control-prev');
     const nextButton = container.querySelector('.movie-carousel-control-next');
     let scrollPosition = 0;
