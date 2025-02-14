@@ -24,7 +24,7 @@ async function mostrarEpisodios() {
         const container = document.getElementById("carousel-inner");
         container.innerHTML = '';
 
-        data.results.forEach(serie => {
+        data.results.slice(6,20).forEach(serie => {
             const carouselItem = document.createElement("div");
             carouselItem.classList.add("movie-carousel-item");
 

@@ -46,10 +46,6 @@ body {
   background-color: var(--btn-bg);
   transition: background-color 0.3s;
 
-  &:hover {
-    background-color: var(--btn-bg-hover);
-  }
-
   &-outline {
     background-color: transparent;
     border: 2px solid var(--primary-color);
@@ -66,7 +62,7 @@ body {
 .carousel {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 75vh !important;
   overflow: hidden;
 
   .carousel-inner {
