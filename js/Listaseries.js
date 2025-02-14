@@ -22,7 +22,7 @@ async function mostrarSeriesPopulares() {
 
     const data = await obtenerSeriesPopulares(apiUrl, apiToken);  
     if (data && data.results) {
-        const container = document.getElementById("serie-lista-container");  
+        const container = document.getElementById("carousel-inner-series");  
         container.innerHTML = '';  
 
         data.results.forEach(serie => {

@@ -29,15 +29,34 @@ async function mostrarTrendingSerie() {
       const container = document.getElementById("serie-trending-container");  
       container.innerHTML = ''; 
 
-      data.results.forEach(serie => {
+      data.results.slice(0, 10).forEach(serie => {
           const movieElement = document.createElement("div");
           movieElement.classList.add("movie-item");
 
           const posterUrl = `https://image.tmdb.org/t/p/w500${serie.poster_path}`;
+          const overviewText = serie.overview ? serie.overview : "Sinopsis no disponible";
 
           movieElement.innerHTML = `
-              <img src="${posterUrl}" alt="${serie.name}" style="width: 200px; height: 300px;" />
-          `;
+          <div class="serie-poster">
+              <img src="${posterUrl}" alt="${serie.name}" style="height: 300px;" />
+          </div>
+          <div class="movie-overlay">
+              <div class="movie-title">${serie.name}</div>
+              <p class="movie-overview">${overviewText}</p>
+              <div class="button-container">
+                  <button class="btn fav-btn">❤️</button>
+                  <button class="btn add-btn">+</button>
+                  <a href="../htmls/visionado.html">
+                      <button class="btn play-btn">▶</button>
+                  </a>
+                  <a href="../htmls/detalle_peli.html" class="detalles-btn">
+                      <button class="btn">Detalles</button>
+                  </a>
+              </div>
+          </div>
+      `;
+      
+      console.log("HTML generado para cada serie:", movieElement.outerHTML);
           container.appendChild(movieElement);  
       });
   } else {

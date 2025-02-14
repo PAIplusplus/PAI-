@@ -29,18 +29,36 @@ async function mostrarTop10Serie() {
       const container = document.getElementById("serie-top10-container");
       container.innerHTML = ''; // Limpiar el contenedor antes de agregar elementos
 
-      data.results.slice(0, 10).forEach(serie => {
+      data.results.slice(0, 10).forEach((serie, index) => {
           const serieElement = document.createElement("div");
           serieElement.classList.add("movie-item");
 
-          const posterUrl = `https://image.tmdb.org/t/p/w500${serie.poster_path}`;
+          const posterUrl = serie.poster_path 
+              ? `https://image.tmdb.org/t/p/w500${serie.poster_path}`
+              : '../imagenes/placeholder.jpg'; // Imagen de respaldo si no hay poster
+
+          const overviewText = serie.overview 
+              ? serie.overview.slice(0, 100) + "..." 
+              : "Sin descripción.";
 
           serieElement.innerHTML = `
-              <div class="serie-poster">
-                  <img src="${posterUrl}" alt="${serie.name}" style="width: 200px; height: 300px;" />
-              </div>
-              <div class="serie-name">
-                  <h3>${serie.name}</h3>
+              <div class="movie-number">${index + 1}</div>
+              <div class="movie-poster">
+                  <img src="${posterUrl}" alt="${serie.name}" />
+                  <div class="movie-overlay">
+                    <div class="movie-title">${serie.name}</div>
+                    <p class="movie-overview">${overviewText}</p>
+                    <br>
+                    <div class="button-container">
+                        <button class="btn fav-btn">❤️</button>
+                        <a href="../htmls/detalle_peli.html">
+                           <button class="btn add-btn">+</button>
+                        </a>
+                         <a href="../htmls/visionado.html">
+                            <button class="btn play-btn">▶</button>
+                        </a>
+                    </div>
+                  </div>
               </div>
           `;
           container.appendChild(serieElement);
