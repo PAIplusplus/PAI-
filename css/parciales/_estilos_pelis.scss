@@ -10,6 +10,61 @@
   --btn-negro:#141414;
 }
 
+.serie-poster img {
+  width: auto !important;  // Evita que otras reglas fijen un ancho
+  max-width: 100%; // Evita que la imagen sea más grande que su contenedor
+  height: 300px; // Mantiene la altura deseada
+  object-fit: cover; // Ajusta la imagen sin deformarla
+}
+
+.movie-carousel {
+  width: 100vw; // Asegura que el carrusel use todo el ancho de la pantalla
+  overflow: hidden;
+}
+
+.movie-carousel-inner {
+  display: flex;
+  gap: 20px; // Ajusta la separación entre elementos
+  transition: transform 0.5s ease-in-out;
+}
+
+.movie-item {
+  flex: 0 0 auto;
+  min-width: 300px; // Ajusta este valor si quieres elementos más grandes
+  max-width: 600px; // Puedes modificarlo según lo que necesites
+  height: auto;
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+// Asegurar que el Top 10 y otros elementos sean más visibles
+#movie-top10-container,
+#serie-top10-container,
+#serie-trending-container {
+  width: 100vw;
+  overflow: visible !important;
+}
+
+// Ajustar el tamaño del carrusel en pantallas grandes
+@media (min-width: 992px) {
+  .movie-item {
+    min-width: 400px;
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .movie-item {
+    min-width: 500px;
+    max-width: 800px;
+  }
+}
+
 
 
 // para que aparezcan visibles las imagenes top 10
@@ -170,7 +225,7 @@ body{
 
 .movie-item img {
   margin-right: 60px;
-  height: 200px;
+  height: 100%;
 }
 
 .button-container {
