@@ -29,7 +29,7 @@ async function mostrarTrendingSerie() {
       const container = document.getElementById("serie-trending-container");  
       container.innerHTML = ''; 
 
-      data.results.slice(2, 10).forEach(serie => {
+      data.results.slice(2, 30).forEach(serie => {
           const movieElement = document.createElement("div");
           movieElement.classList.add("movie-item");
 
