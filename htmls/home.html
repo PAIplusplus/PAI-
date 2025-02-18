@@ -18,37 +18,31 @@
 
 <body>
   <!-- HEADER -->
-  <!-- HEADER -->
   <header>
     <div class="container-header">
-      <a class="logo" href="./home.html">
+      <a class="logo" href="#">
         <img src="/imagenes/Logo_200x100-removebg-preview.png" alt="Logo">
       </a>
-
-      <!-- Icono de hamburguesa para la vista móvil -->
-      <button class="hamburger-btn d-block d-sm-none" id="hamburger-btn">
-        <i class="bi bi-list"></i> <!-- Bootstrap icon -->
-      </button>
+      <div class="hamburger" id="hamburger">
+        <i class="bi bi-list"></i>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#" class="nav-link">Inicio</a>
+        <a href="../htmls/series.html" class="nav-link">Series</a>
+        <a href="../htmls/peliculas.html" class="nav-link">Películas</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Más</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Novedades</a>
+            <a href="#" class="dropdown-item">Próximamente</a>
+          </div>
+        </div>
+        <div class="auth-buttons">
+          <a href="#" class="registrarse">Registrarse</a>
+          <a href="#"  class="login">Iniciar sesión</a>
+        </div>
+      </nav>
     </div>
-    
-    <nav class="nav" id="nav">
-      <a href="#" class="nav-link" style="color: #d94dfc;">Inicio</a>
-      <a href="../htmls/series.html" class="nav-link">Series</a>
-      <a href="../htmls/peliculas.html" class="nav-link">Películas</a>
-
-      <div class="dropdown" id="dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
-        <ul class="dropdown-menu">
-          <li><a href="#" class="dropdown-item">Novedades</a></li>
-          <li><a href="#" class="dropdown-item">Próximamente</a></li>
-        </ul>
-      </div>
-
-      <div class="auth-buttons">
-        <a href="#">Registrarse</a>
-        <a href="#" class="login-link">Iniciar sesión</a>
-      </div>
-    </nav>
   </header>
   <!-- HEADER END -->
 
@@ -70,7 +64,7 @@
           <h5>Crepúsculo</h5>
           <a href="../htmls/visionado.html">
             <button class="btn-watch-now">VER AHORA</button>
-          </a>
+        </a>        
         </div>
       </div>
       <div class="carousel-item">
@@ -79,7 +73,7 @@
           <h5>Los Bridgerton</h5>
           <a href="../htmls/visionado.html">
             <button class="btn-watch-now">VER AHORA</button>
-          </a>
+        </a>
         </div>
       </div>
       <div class="carousel-item">
@@ -88,7 +82,7 @@
           <h5>A 3 Metros sobre el cielo</h5>
           <a href="../htmls/visionado.html">
             <button class="btn-watch-now">VER AHORA</button>
-          </a>
+        </a>        
         </div>
       </div>
     </div>
@@ -148,7 +142,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container-footer">
-      <p>&copy; 2025 PAI+. Todos los derechos reservados.</p>
+      <p>&copy; 2025 TuSitioWeb. Todos los derechos reservados.</p>
       <nav class="footer-nav">
         <a href="#" class="footer-link">Política de Privacidad</a>
         <a href="#" class="footer-link">Términos y Condiciones</a>
