@@ -18,33 +18,37 @@
 
 <body>
   <!-- HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="container-header">
       <a class="logo" href="./home.html">
         <img src="/imagenes/Logo_200x100-removebg-preview.png" alt="Logo">
       </a>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav class="nav" id="nav">
-        <a href="#" class="nav-link" style="color: #d94dfc;">Inicio</a>
-        <a href="../htmls/series.html" class="nav-link">Series</a>
-        <a href="../htmls/peliculas.html" class="nav-link">Películas</a>
-        <div class="dropdown" id="dropdown">
-          <a href="#" class="nav-link dropdown-toggle">Más</a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Novedades</a>
-            <a href="#" class="dropdown-item">Próximamente</a>
-          </div>
-        </div>
-        <div class="auth-buttons">
-          <a href="#">Registrarse</a>
-          <a href="#" class="login-link">Iniciar sesión</a>
-        </div>
-      </nav>      
+
+      <!-- Icono de hamburguesa para la vista móvil -->
+      <button class="hamburger-btn d-block d-sm-none" id="hamburger-btn">
+        <i class="bi bi-list"></i> <!-- Bootstrap icon -->
+      </button>
     </div>
+    
+    <nav class="nav" id="nav">
+      <a href="#" class="nav-link" style="color: #d94dfc;">Inicio</a>
+      <a href="../htmls/series.html" class="nav-link">Series</a>
+      <a href="../htmls/peliculas.html" class="nav-link">Películas</a>
+
+      <div class="dropdown" id="dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="dropdown-item">Novedades</a></li>
+          <li><a href="#" class="dropdown-item">Próximamente</a></li>
+        </ul>
+      </div>
+
+      <div class="auth-buttons">
+        <a href="#">Registrarse</a>
+        <a href="#" class="login-link">Iniciar sesión</a>
+      </div>
+    </nav>
   </header>
   <!-- HEADER END -->
 
