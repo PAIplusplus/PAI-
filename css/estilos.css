@@ -1138,4 +1138,53 @@ span {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "trailer__img trailer__descripcion";
   }
+}
+:root {
+  --primary-color: #bb00fa;
+  --primary-color-light: #d94dfc;
+}
+
+.visionado-container {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Flecha para volver */
+.flecha {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  z-index: 10;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.flecha:hover {
+  color: var(--primary-color-light);
+  transform: scale(1.1);
 }/*# sourceMappingURL=estilos.css.map */
