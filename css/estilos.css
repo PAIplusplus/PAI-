@@ -78,6 +78,19 @@ header .nav .dropdown .dropdown-item {
 header .nav .dropdown .dropdown-item:hover {
   background-color: var(--primary-color-dark);
 }
+header .nav .LoginContainer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+header .nav .LoginContainer a.registrarse:hover,
+header .nav .LoginContainer a.login:hover {
+  background-color: #d94dfc;
+  color: #fff;
+}
 header .hamburger {
   display: none;
   flex-direction: column;
@@ -135,9 +148,6 @@ header .hamburger {
 }
 .search-bar .search-button i {
   font-size: 1.2rem;
-}
-.search-bar .registrarse {
-  background-color: var(--primary-color-light);
 }
 
 /* Media Query */

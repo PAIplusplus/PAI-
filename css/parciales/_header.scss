@@ -90,6 +90,21 @@ header {
         }
       }
     }
+
+    .LoginContainer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .LoginContainer a.registrarse:hover,
+    .LoginContainer a.login:hover {
+      background-color: #d94dfc;
+      color: #fff;
+    }
   }
 
   /* Hamburger Menu */
@@ -155,9 +170,6 @@ header {
     }
   }
 
-  .registrarse{
-    background-color: var(--primary-color-light);
-  }
 }
 
 /* Media Query */
@@ -168,7 +180,7 @@ header {
     }
 
     .nav {
-      display: none; 
+      display: none;
     }
   }
 
@@ -177,12 +189,12 @@ header {
     flex-direction: column;
     gap: 15px;
     position: absolute;
-    top: 70px; 
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: #1e1e1e;
     padding: 20px 0;
-    z-index: 9999; 
+    z-index: 9999;
   }
 
   .search-bar {
