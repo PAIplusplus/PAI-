@@ -1,4 +1,4 @@
-/* General reset */
+
 *,
 *::before,
 *::after {
@@ -18,7 +18,6 @@ body {
   color: var(--text-on-primary);
 }
 
-/* Variables */
 :root {
   --primary-color: #bb00fa;
   --primary-color-light: #d94dfc;
@@ -30,7 +29,6 @@ body {
   --btn-bg-hover: var(--primary-color-dark);
 }
 
-/* Buttons */
 .auth-buttons {
   display: flex;
   gap: 10px;
@@ -58,7 +56,6 @@ body {
   }
 }
 
-/* Carousel */
 .carousel {
   position: relative;
   width: 100%;
@@ -157,7 +154,6 @@ body {
   }
 }
 
-/* Movie Carousel */
 .movie-carousel {
   position: relative;
   width: 100%;
