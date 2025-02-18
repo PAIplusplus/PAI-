@@ -57,11 +57,10 @@ header .nav .nav-link:hover {
 header .nav .dropdown {
   position: relative;
   z-index: 10002;
+  /* Close button inside the dropdown */
 }
-header .nav .dropdown .dropdown-toggle::after {
-  content: "▼";
-  font-size: 0.8rem;
-  margin-left: 5px;
+header .nav .dropdown .dropdown-toggle {
+  cursor: pointer;
 }
 header .nav .dropdown .dropdown-menu {
   display: none;
@@ -74,7 +73,7 @@ header .nav .dropdown .dropdown-menu {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10003;
 }
-header .nav .dropdown:hover .dropdown-menu {
+header .nav .dropdown.active .dropdown-menu {
   display: block;
 }
 header .nav .dropdown .dropdown-item {
@@ -87,10 +86,24 @@ header .nav .dropdown .dropdown-item {
 header .nav .dropdown .dropdown-item:hover {
   background-color: var(--primary-color-dark);
 }
+header .nav .dropdown .close-dropdown {
+  font-size: 1.2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+header .nav .dropdown .close-dropdown:hover {
+  background-color: #e74c3c;
+}
 header .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 20px;
   width: 30px;
   cursor: pointer;
@@ -100,6 +113,27 @@ header .hamburger span {
   width: 100%;
   background-color: white;
   transition: 0.3s;
+  display: block;
+}
+header .hamburger.active span {
+  background-color: transparent;
+  position: relative;
+}
+header .hamburger.active span::before, header .hamburger.active span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+header .hamburger.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+header .hamburger.active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
 }
 
 /* Search Bar */
@@ -173,6 +207,9 @@ header .hamburger span {
   }
   .nav.active {
     display: flex;
+  }
+  .dropdown.active .dropdown-menu {
+    display: block;
   }
 }
 *,
