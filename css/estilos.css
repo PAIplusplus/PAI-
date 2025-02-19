@@ -30,7 +30,6 @@ header {
   gap: 20px;
   align-items: center;
 }
-
 .nav.active {
   display: flex;
   flex-direction: column;
@@ -42,30 +41,25 @@ header {
   background-color: #1e1e1e;
   padding: 20px 0;
 }
-
-.nav-link {
+.nav .nav-link {
   font-size: 1rem;
-  color: var(--text-on-primary);
+  color: #fff;
   font-weight: 500;
   position: relative;
   transition: color 0.3s;
 }
-
-.nav-link:hover {
-  color: var(--primary-color-light);
+.nav .nav-link:hover {
+  color: #e47ffd;
 }
-
-.dropdown {
+.nav .dropdown {
   position: relative;
 }
-
-.dropdown-toggle::after {
+.nav .dropdown .dropdown-toggle::after {
   content: "▼";
   font-size: 0.8rem;
   margin-left: 5px;
 }
-
-.dropdown-menu {
+.nav .dropdown .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -75,21 +69,18 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-item {
+.nav .dropdown .dropdown-menu .dropdown-item {
   padding: 10px 15px;
-  color: var(--text-on-primary);
+  color: #fff;
   display: block;
   font-size: 0.9rem;
   transition: background 0.3s;
 }
-
-.dropdown-item:hover {
-  background-color: var(--primary-color-dark);
+.nav .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #ce1bfb;
+}
+.nav .dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .LoginContainer a {
@@ -100,9 +91,7 @@ header {
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
 }
-
-.LoginContainer a.registrarse:hover,
-.LoginContainer a.login:hover {
+.LoginContainer a.registrarse:hover, .LoginContainer a.login:hover {
   background-color: #d94dfc;
   color: #fff;
 }
@@ -129,51 +118,44 @@ header {
   width: 100%;
   z-index: 999;
 }
-
-.search-input {
+.search-bar .search-input {
   width: 100%;
   max-width: 600px;
   padding: 10px 15px;
   border-radius: 15px;
   border: 1px solid #444;
   font-size: 1rem;
-  color: var(--text-on-primary);
+  color: #fff;
   background-color: #747474;
   outline: none;
   transition: border-color 0.3s;
 }
-
-.search-input::-moz-placeholder {
+.search-bar .search-input::-moz-placeholder {
   color: #000;
 }
-
-.search-input::placeholder {
+.search-bar .search-input::placeholder {
   color: #000;
 }
-
-.search-input:focus {
-  border-color: var(--primary-color-light);
+.search-bar .search-input:focus {
+  border-color: #e47ffd;
 }
-
-.search-button {
+.search-bar .search-button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
-  background-color: var(--primary-color);
-  color: var(--btn-color);
+  background-color: #d94dfc;
+  color: #fff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
 }
-
-.search-button:hover {
-  background-color: var(--primary-color-dark);
+.search-bar .search-button:hover {
+  background-color: #ce1bfb;
 }
-
-.search-button i {
+.search-bar .search-button i {
   font-size: 1.2rem;
 }
 
@@ -220,8 +202,8 @@ header {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--btn-color);
+    background-color: #d94dfc;
+    color: #fff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -229,7 +211,7 @@ header {
     transition: background-color 0.3s;
   }
   .search-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: #ce1bfb;
   }
   .search-button i {
     font-size: 1.2rem;
