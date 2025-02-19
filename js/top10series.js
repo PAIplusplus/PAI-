@@ -27,7 +27,7 @@ async function mostrarTop10Serie() {
 
   if (data && data.results) {
       const container = document.getElementById("serie-top10-container");
-      container.innerHTML = ''; // Limpiar el contenedor antes de agregar elementos
+      container.innerHTML = ''; 
 
       data.results.slice(0, 10).forEach((serie, index) => {
           const serieElement = document.createElement("div");
