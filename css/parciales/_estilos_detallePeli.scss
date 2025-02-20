@@ -189,6 +189,34 @@
 }
 
 
+@media (min-width: 576px) {
+    .portada__descripcion{
+        display: none;
+    }
+    .portada__btn{
+        padding: -20px;
+
+    }
+}
+
+@media (min-width: 768px) {
+    .portada__descripcion{
+        display: block;
+        font-size: 14px;
+    }
+  
+}
+
+@media (min-width: 992px) {
+    .portada__descripcion{
+        font-size: 20px;
+    }
+  
+}
+
+@media (min-width: 1200px) {
+
+}
 
 
 

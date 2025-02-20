@@ -1149,6 +1149,25 @@ span, .aparecer {
     grid-template-areas: "trailer__img trailer__descripcion";
   }
 }
+@media (min-width: 576px) {
+  .portada__descripcion {
+    display: none;
+  }
+  .portada__btn {
+    padding: -20px;
+  }
+}
+@media (min-width: 768px) {
+  .portada__descripcion {
+    display: block;
+    font-size: 14px;
+  }
+}
+@media (min-width: 992px) {
+  .portada__descripcion {
+    font-size: 20px;
+  }
+}
 :root {
   --primary-color: #BA90DA;
   --btn-bg: var(--primary-color);
@@ -1187,11 +1206,13 @@ span, .aparecer {
 }
 .portada .añadirLista {
   padding: 10px;
+  display: block;
 }
 
 .info__logo {
   width: 70%;
   margin-left: -10%;
+  display: block;
 }
 
 #episodios {
@@ -1343,6 +1364,11 @@ span, .aparecer {
   grid-area: trailer__descripcion;
 }
 
+.portada__img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 576px) {
   .portada {
     position: relative;
@@ -1353,6 +1379,10 @@ span, .aparecer {
     position: absolute;
     width: 80%;
     margin-left: 5%;
+  }
+  .portada__img {
+    width: 100%;
+    height: 100%;
   }
   .portada__btn {
     background-color: var(--btn-bg);
@@ -1374,8 +1404,36 @@ span, .aparecer {
     background-color: var(--primary-color-light);
     color: white;
   }
+  .portada__btn .card__contenido h5 {
+    margin-top: -15px;
+  }
+  .portada .portada__fondo img {
+    width: 100%;
+    height: 100%;
+  }
   .portada .añadirLista {
     padding: 10px;
+  }
+  .portada__info {
+    width: 50%;
+    top: 20%;
+    left: 5%;
+    position: absolute;
+    display: block;
+  }
+  .info__logo {
+    width: 50%;
+    margin-left: -10%;
+    display: block;
+  }
+  .info__compose {
+    display: none;
+  }
+  .desaparece {
+    display: block;
+  }
+  .info__logo {
+    display: block;
   }
 }
 @media (min-width: 992px) {
@@ -1394,6 +1452,7 @@ span, .aparecer {
   }
   .portada__img {
     width: 100%;
+    height: 100%;
   }
   .portada__fondo {
     width: 100%;
@@ -1403,26 +1462,40 @@ span, .aparecer {
     left: 0;
     background-image: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.041));
   }
+  .card__contenido h5 {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
   .añadir {
     border-radius: 60%;
   }
   .info__logo {
     margin-bottom: 50px;
   }
-  .info__compose {
-    display: flex;
-    width: 20%;
-  }
   #contenido-detalles {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "descripcion info";
+  }
+  .info__compose {
+    display: block;
+  }
+  .desaparece {
+    display: block;
   }
   .trailer {
     gap: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "trailer__img trailer__descripcion";
+  }
+  .info__logo {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .añadirLista {
+    display: none;
   }
 }
 :root {

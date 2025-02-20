@@ -5,6 +5,7 @@
     --btn-bg-hover: var(--primary-color-dark);
   }
 
+  
 
 .portada{
     position: relative;
@@ -39,10 +40,14 @@
             background-color: var(--primary-color-light);
             color: white;
         }
+       
     }
+   
+   
 
     .añadirLista{
         padding: 10px;
+        display: block;
     }
 
 }
@@ -50,6 +55,7 @@
 .info__logo{
     width: 70%;
     margin-left: -10%;
+    display: block;
 }
 
 
@@ -214,7 +220,6 @@
 
 
 
-
 .trailer{
     width: 80%;
     margin: auto;
@@ -233,6 +238,10 @@
     }
 }
 
+.portada__img{
+    width: 100%;
+    height: 100%;
+}
 
 @media (min-width: 576px) {  
 
@@ -248,6 +257,11 @@
             margin-left: 5%;
         }
     
+        
+        &__img{
+            width: 100%;
+            height: 100%;
+        }
         &__btn{
             background-color: var(--btn-bg);
             align-items: center;
@@ -269,14 +283,48 @@
                 background-color: var(--primary-color-light);
                 color: white;
             }
+            
+            & .card__contenido h5{
+               
+                margin-top: -15px;
+            }
         }
     
+        & .portada__fondo img{
+            width: 100%;
+            height: 100%;
+        }
         .añadirLista{
             padding: 10px;
         }
     
     }
 
+    .portada__info{
+        width: 50%;
+        top: 20%;
+        left: 5%;
+        position: absolute;
+        display: block;
+    }
+    
+    .info__logo{
+        width: 50%;
+        margin-left: -10%;
+        display: block;
+    }
+
+    .info__compose{
+        display: none;
+    }
+    .desaparece{
+        display: block;
+    }
+    .info__logo{
+        display: block;
+    }
+
+    
 }
 
 
@@ -300,6 +348,7 @@
 
         &__img{
             width: 100%;
+            height: 100%;
         }
 
         &__fondo{
@@ -313,6 +362,11 @@
 
     }
 
+    .card__contenido h5{
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
     .añadir{
         border-radius: 60%;
     }
@@ -321,10 +375,7 @@
         margin-bottom: 50px;
     }
 
-    .info__compose{
-        display: flex;
-        width: 20%;
-    }
+   
   
     #contenido-detalles{
         display: grid ;
@@ -334,10 +385,14 @@
         ;
     }
 
+    .info__compose{
+        display: block;
+    }
 
 
-
-
+    .desaparece{
+        display: block;
+     }
 
 
     .trailer{
@@ -350,7 +405,10 @@
 
     }
 
-
+ 
+    .info__logo{
+        display: block;
+    }
 
 }
 
@@ -358,6 +416,18 @@
 
 
 
+
+@media (min-width: 992px) {
+    
+
+  
+}
+
+@media (min-width: 1200px) {
+    .añadirLista{
+        display: none;
+    }
+}
 
 
 
